@@ -23,10 +23,16 @@ Background: movies have been added to database
 
 Scenario: restrict to movies with 'PG' or 'R' ratings
   # enter step(s) to check the 'PG' and 'R' checkboxes
+  When I check "PG"
   # enter step(s) to uncheck all other checkboxes
+  Then I uncheck "R"
   # enter step to "submit" the search form on the homepage
+  And I press "ratings_submit"
   # enter step(s) to ensure that PG and R movies are visible
+  Then I should see "The Incredibles"
   # enter step(s) to ensure that other movies are not visible
+  And I should not see "When Harry Met Sally"
+  
 
 Scenario: all ratings selected
   # see assignment
