@@ -11,6 +11,11 @@ Given /the following movies exist/ do |movies_table|
   #fail "Not done"
 end
 
+Given /I check the following ratings: "([^"]*)"$/ do |ratings|
+  ratings.each do |rating|
+    check("ratings_#{rating}")
+  end
+end
 # Make sure that one string (regexp) occurs before or after another one
 #   on the same page
 

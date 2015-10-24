@@ -33,6 +33,9 @@ Scenario: restrict to movies with 'PG' or 'R' ratings
   # enter step(s) to ensure that other movies are not visible
   And I should not see "When Harry Met Sally"
   
+Scenario: make new steps
+  Given I check the following ratings: G, PG, R  
+  
 
 Scenario: all ratings selected
   # see assignment
